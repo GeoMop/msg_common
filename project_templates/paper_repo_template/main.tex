@@ -1,0 +1,140 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+
+\usepackage[unicode,colorlinks=true,linkcolor=black,citecolor=blue,urlcolor=blue]
+  {hyperref}
+\usepackage{amsfonts,amsmath}
+\usepackage{booktabs}
+\usepackage{csquotes}
+\usepackage{etoolbox}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{xcolor}
+
+\geometry{
+  tmargin=3.0cm,
+  bmargin=3.0cm,
+  lmargin=2.8cm,
+  rmargin=2.8cm,
+  footskip=24pt
+}
+
+\setcounter{secnumdepth}{3}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7\baselineskip}
+
+\newcommand{\todo}[1]{{\color{red}#1}}
+
+\def\UNIT#1#2{\ifstrempty{#2}{}{\ifstrequal{#2}{1}{\mathrm{#1}}{\mathrm{#1}^{#2}}}}
+\def\units#1#2#3{\ifstrempty{#1#2#3}{$[-]$}{$[ \UNIT{kg}{#1}\UNIT{m}{#2}\UNIT{s}{#3} ]$}}
+\def\unitss#1#2#3{\ifstrempty{#1#2#3}{$-$}{$ \UNIT{kg}{#1}\UNIT{m}{#2}\UNIT{s}{#3} $}}
+\def\munit#1{\,\mathrm{#1}}
+\def\bunit#1{\left[\mathrm{#1}\right]}
+
+\def\abs#1{\lvert#1\rvert}
+\def\argdot{{\hspace{0.18em}\cdot\hspace{0.18em}}}
+\def\d{\mathrm{d}}
+\def\D{{\tn D}}
+\def\div{\operatorname{div}}
+\def\grad{\nabla}
+\def\jmp#1{[#1]}
+\def\prtl{\partial}
+\def\R{\mathbb R}
+\def\Real{\mathbb R}
+\def\sc#1#2{\left(#1,#2\right)}
+\def\tn#1{{\mathbb{#1}}}
+\def\vc#1{\mathbf{\boldsymbol{#1}}}
+\def\E{{\mathsf E}}
+\def\avg#1{\langle#1\rangle}
+\def\var#1{\langle\!\langle#1\rangle\!\rangle}
+\def\Var{\mathop{\rm Var}}
+\def\Cov{\mathop{\rm Cov}}
+
+\title{Template Title for a Scientific Paper or Technical Report}
+\author{Author Name \\ Institution or Project}
+\date{\today}
+
+\begin{document}
+\begin{onehalfspacing}
+
+\maketitle
+
+\begin{abstract}
+Replace this abstract with a concise statement of the problem, the method, the
+main result, and the scope of the document.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+\label{sec:introduction}
+
+This repository provides a minimal starting point for scientific papers and
+technical reports. Replace the template text with project-specific content and
+keep the structure only where it supports the final document.
+
+State the document goal early. For a paper, frame the research question or
+technical claim. For a report, state the practical purpose, scope, and intended
+use of the results.
+
+\section{Methods or Model}
+\label{sec:methods}
+
+Describe the method, data, or model with enough detail for review and reuse.
+Define notation before relying on it repeatedly. For example, let
+$u \colon \Omega \to \R$ denote a scalar field on a domain $\Omega \subset \R^d$.
+Then a generic balance equation may be written as
+\[
+  -\div\left(\tn D \grad u\right) = f \qquad \text{in } \Omega.
+\]
+
+The template keeps a small set of reusable macros for vectors, tensors,
+operators, and units. Use project macros consistently instead of reintroducing
+raw notation locally.
+
+\section{Results}
+\label{sec:results}
+
+Summarize the key result in a form the reader can inspect quickly. Tables and
+figures should support a specific claim rather than act as a general archive.
+
+\begin{table}[htb]
+  \centering
+  \caption{Example table with a technical caption that can stand on its own.}
+  \label{tab:example-results}
+  \begin{tabular}{lcc}
+    \toprule
+    Case & Value & Unit \\
+    \midrule
+    Reference & 1.00 & $-$ \\
+    Variant A & 1.12 & $-$ \\
+    Variant B & 0.94 & $-$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Reference tables, figures, and equations through labels such as
+Tab.~\ref{tab:example-results} and Section~\ref{sec:methods}.
+
+\section{Discussion}
+\label{sec:discussion}
+
+Interpret the results without overstating them. Make assumptions, limitations,
+and sensitivity to inputs explicit where they affect the conclusions.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Keep the conclusion traceable to the preceding sections. Summarize what was
+shown, what remains uncertain, and what a reader should take forward.
+
+\end{onehalfspacing}
+\end{document}

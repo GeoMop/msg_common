@@ -1,0 +1,56 @@
+# latexmk configuration for hosted editors such as Overleaf.
+#
+# Keep this file conservative. It should mirror the normal local build where
+# reasonable, and it can also be used directly by hosted editors such as
+# Overleaf.
+
+
+# Shared latexdiff settings.
+my $latexdiff_args = '--flatten --math-markup=whole --graphics-markup=none';
+my $latexdiff_default_old_source = 'main-old.tex';
+
+# LATEXDIFF_APPEND_SAFECMD:
+#   Register macros that should be preserved as safe wrappers in diffs, which
+#   is useful for math commands whose arguments should still be diffed.
+my $latexdiff_append_safecmd = '';
+# Example:
+# $latexdiff_append_safecmd = 'vc,tn,symbfit,norm,grad,div,MMD,KL,TV,Real';
+
+# LATEXDIFF_APPEND_TEXTCMD:
+#   Register macros whose arguments should be treated as normal text by
+#   latexdiff, which is useful for text-formatting commands around prose.
+my $latexdiff_append_textcmd = '';
+# Example:
+# $latexdiff_append_textcmd = 'gls,acrfull,textit,textbf';
+
+if ($latexdiff_append_safecmd ne '') {
+  $latexdiff_args .= ' --append-safecmd=' . $latexdiff_append_safecmd;
+}
+if ($latexdiff_append_textcmd ne '') {
+  $latexdiff_args .= ' --append-textcmd=' . $latexdiff_append_textcmd;
+}
+
+# Diff mode is enabled by environment variables:
+# BUILD_DIFF=0 disables diff mode explicitly.
+# BUILD_DIFF=1 enables diff mode explicitly.
+# LATEXDIFF_OLD_SOURCE=/path/to/old.tex
+# LATEXDIFF_NEW_SOURCE=main.tex
+#
+# Standalone latexmk use defaults to diff mode against `main-old.tex` when that
+# file exists. If it does not exist, the build falls back to a plain `main.tex`
+# build without failing.
+my $build_diff = $ENV{'BUILD_DIFF'} // '';
+my $old_source = $ENV{'LATEXDIFF_OLD_SOURCE'} // $latexdiff_default_old_source;
+my $new_source = $ENV{'LATEXDIFF_NEW_SOURCE'} // 'main.tex';
+
+$pdf_mode = 4;  # Use LuaLaTeX.
+# Plain build without diff.
+$lualatex = 'lualatex %O -interaction=nonstopmode -file-line-error %S';
+
+if ($build_diff ne '0' && -e $old_source) {
+  my $diff_source = 'main-d.tex';
+
+  $lualatex =
+    "latexdiff $latexdiff_args $old_source $new_source > $diff_source; " .
+    "lualatex %O -interaction=nonstopmode -file-line-error $diff_source";
+}
