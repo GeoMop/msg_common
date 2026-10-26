@@ -1,0 +1,6 @@
+interface:
+  display_name: "Test Cover"
+  short_description: "Build broad behavior-focused test coverage"
+  default_prompt: "Use $test-cover to design and add general behavior-focused tests for this component."
+policy:
+  allow_implicit_invocation: true

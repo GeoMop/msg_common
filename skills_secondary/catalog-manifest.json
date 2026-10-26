@@ -1,0 +1,251 @@
+{
+  "catalog": {
+    "package": "agentic-awesome-skills",
+    "version": "18.10.0",
+    "digest": "sha256-38ceca8b5e91dfee5a0e27d27eca75cd77f8338682a57a5940f4e4b2e23ab500"
+  },
+  "catalogSkillIds": [
+    "multi-source-search",
+    "context7-auto-research",
+    "plan-writing",
+    "prototype",
+    "python-pro",
+    "cpp",
+    "fp-pragmatic",
+    "fp-data-transforms",
+    "pytest-skill",
+    "sympy",
+    "testing-qa",
+    "systematic-debugging",
+    "find-bugs",
+    "data-quality-frameworks",
+    "data-engineering-data-pipeline",
+    "ml-engineer",
+    "ai-pipeline-orchestration",
+    "mlops-engineer"
+  ],
+  "files": [
+    {
+      "id": "multi-source-search",
+      "path": "SKILL.md",
+      "sha256": "sha256-b212f69485e284f0ea7a1b3dd0db1a89d708e638744e6a45fc31f36e850f4e18",
+      "size": 6100
+    },
+    {
+      "id": "multi-source-search",
+      "path": "references/report-schema.md",
+      "sha256": "sha256-e675a7f6b8a4e601dfe7f8e91ed4fdab39d444b44650cffadb84484551598719",
+      "size": 1689
+    },
+    {
+      "id": "multi-source-search",
+      "path": "scripts/validate_report.py",
+      "sha256": "sha256-9af8a774e466fae5ff72fae4a042818fd0a3c4a4dd1b79d927a17c9a486b3669",
+      "size": 9495
+    },
+    {
+      "id": "context7-auto-research",
+      "path": "SKILL.md",
+      "sha256": "sha256-6bdd167ebe8f7deca2d8dade574514b826d03c9ef47972876cee3d7209687667",
+      "size": 1623
+    },
+    {
+      "id": "plan-writing",
+      "path": "SKILL.md",
+      "sha256": "sha256-78794f8bb9b641fac1fe1f770804cc7b6fdc2f474f0f2e942c0a177cb8dbbae5",
+      "size": 4346
+    },
+    {
+      "id": "prototype",
+      "path": "LOGIC.md",
+      "sha256": "sha256-da91dc92195c00d5dc33863b8c1a030998025a0f8583ebf2babd770825b7f70c",
+      "size": 5594
+    },
+    {
+      "id": "prototype",
+      "path": "SKILL.md",
+      "sha256": "sha256-cab0f8a32144977472467f304fed7e834352591edb0561e7c971724c3cd1fee8",
+      "size": 4054
+    },
+    {
+      "id": "prototype",
+      "path": "UI.md",
+      "sha256": "sha256-d76d565149ee50456c5ddc5e29c27fec8737637874fe5c37d970db085a200b27",
+      "size": 6789
+    },
+    {
+      "id": "python-pro",
+      "path": "SKILL.md",
+      "sha256": "sha256-bcc90cf5bdd67342925c2a041f54821116270001a2944d8242af7f8426595326",
+      "size": 7605
+    },
+    {
+      "id": "cpp",
+      "path": "SKILL.md",
+      "sha256": "sha256-96f6631ef00c34b936b682d4b3c5a1b337927119c8414f8e78bd9f1b387bcc2a",
+      "size": 6633
+    },
+    {
+      "id": "fp-pragmatic",
+      "path": "SKILL.md",
+      "sha256": "sha256-8f006797c14ab99431f0bc4ca6437ae0ea106d152d66d122409a7cdfb489250b",
+      "size": 3396
+    },
+    {
+      "id": "fp-pragmatic",
+      "path": "references/detailed-guide.md",
+      "sha256": "sha256-dfaeedfc61db6e83586531b9f88fbe279d87f3caaf75fc0a58ebb6c6f1a88861",
+      "size": 13401
+    },
+    {
+      "id": "fp-data-transforms",
+      "path": "SKILL.md",
+      "sha256": "sha256-c14f60630f8cd56697e203f92eb65c61b27f7ed9c3b0bb862ad73ec7d0d556c9",
+      "size": 9590
+    },
+    {
+      "id": "fp-data-transforms",
+      "path": "references/detailed-guide.md",
+      "sha256": "sha256-763c890a1d4ba78323c89e42a2aeb85687eadab2402d60765c0e44cfa059cc15",
+      "size": 27965
+    },
+    {
+      "id": "pytest-skill",
+      "path": "SKILL.md",
+      "sha256": "sha256-1c6ae16000c2b5f650c329ee8a58139e5b8f106d71a92e0938af76400b928d9f",
+      "size": 5735
+    },
+    {
+      "id": "pytest-skill",
+      "path": "reference/playbook.md",
+      "sha256": "sha256-02da3341634de43d145d1575c5e41a15d654747df38ae2e9c3cd43628eeabb3b",
+      "size": 10967
+    },
+    {
+      "id": "sympy",
+      "path": "SKILL.md",
+      "sha256": "sha256-f696516e760f8f01a28d7d140f4afca9de7ac0769a28f6fde9abd4f1c399cc51",
+      "size": 2654
+    },
+    {
+      "id": "sympy",
+      "path": "references/detailed-guide.md",
+      "sha256": "sha256-8e41785a091f5d75e9dff7369aaa31517bbef3c0755bdc5f1a3a9361e5615f11",
+      "size": 11339
+    },
+    {
+      "id": "testing-qa",
+      "path": "SKILL.md",
+      "sha256": "sha256-98756bbfbec107c77f9a52800efdd77be7e40749e298d07f79967fdc1b23241f",
+      "size": 5189
+    },
+    {
+      "id": "systematic-debugging",
+      "path": "CREATION-LOG.md",
+      "sha256": "sha256-8e303984dbbecb064fdd5fb7a4179ad6448605152a8508a30a6a47bfbc347050",
+      "size": 4491
+    },
+    {
+      "id": "systematic-debugging",
+      "path": "SKILL.md",
+      "sha256": "sha256-2043610969aecd8cb2c9526c1b1a07419721c5f6ba436d0954a18fd5af25ffc8",
+      "size": 11372
+    },
+    {
+      "id": "systematic-debugging",
+      "path": "condition-based-waiting-example.ts",
+      "sha256": "sha256-40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e",
+      "size": 5054
+    },
+    {
+      "id": "systematic-debugging",
+      "path": "condition-based-waiting.md",
+      "sha256": "sha256-8ab34f68aabdf69954cf8ddf19fcec7b5a56b617c191bb529415842450c239fb",
+      "size": 4036
+    },
+    {
+      "id": "systematic-debugging",
+      "path": "defense-in-depth.md",
+      "sha256": "sha256-699a39eea90a7ba67c854dd30cb7792ab9be45079dbf465b43bd4664ea9d2814",
+      "size": 4430
+    },
+    {
+      "id": "systematic-debugging",
+      "path": "find-polluter.sh",
+      "sha256": "sha256-d05b4922ce3909ed1abd85a60a6dfce3b57ab41434b001375df4a6bd35a7eecd",
+      "size": 3529
+    },
+    {
+      "id": "systematic-debugging",
+      "path": "root-cause-tracing.md",
+      "sha256": "sha256-ca7445f1351528083d394c5f333d4e78c52274a2a469fb8e65474a2b37cb3a2a",
+      "size": 6037
+    },
+    {
+      "id": "systematic-debugging",
+      "path": "test-academic.md",
+      "sha256": "sha256-1e4ac55ef3069e7fba7d68f3c361d4f281e211d7b3ebb32e57d7bde0fe978681",
+      "size": 876
+    },
+    {
+      "id": "systematic-debugging",
+      "path": "test-pressure-1.md",
+      "sha256": "sha256-fb898817b4c6cc9aeab8facb558f760708baf94e79916b534bafc5a7fc947faa",
+      "size": 2123
+    },
+    {
+      "id": "systematic-debugging",
+      "path": "test-pressure-2.md",
+      "sha256": "sha256-56cf0ae6a7330d57fd56fdccde739e8d6375852b8931ade40c185417e299ab9b",
+      "size": 2506
+    },
+    {
+      "id": "systematic-debugging",
+      "path": "test-pressure-3.md",
+      "sha256": "sha256-980963c46434e54181b885998a4ec5640cb28a14b6dae86da108d5801b257366",
+      "size": 2915
+    },
+    {
+      "id": "find-bugs",
+      "path": "SKILL.md",
+      "sha256": "sha256-14830c6931bc43fd58f1326df574c53fec6b777876637e18ee787ffc65aeb6d7",
+      "size": 3633
+    },
+    {
+      "id": "data-quality-frameworks",
+      "path": "SKILL.md",
+      "sha256": "sha256-7576d3039d606559031a9bfefe1af8b5bd0f2e8c6d57309567b441efc05a02d5",
+      "size": 1785
+    },
+    {
+      "id": "data-quality-frameworks",
+      "path": "resources/implementation-playbook.md",
+      "sha256": "sha256-3c0a887aed287b2179b2b239e5d71b2a2f015259d8c66b57aa563f87fbab195a",
+      "size": 15370
+    },
+    {
+      "id": "data-engineering-data-pipeline",
+      "path": "SKILL.md",
+      "sha256": "sha256-2570ee4d4edf2aa20e86f4a2dc0c6903a4729bd3097ba474a212b9ae0c9b13df",
+      "size": 7299
+    },
+    {
+      "id": "ml-engineer",
+      "path": "SKILL.md",
+      "sha256": "sha256-48ccab192a02695b2a4ef621dc3fa3e6676fb8b76caa549466523470f82f6622",
+      "size": 9603
+    },
+    {
+      "id": "ai-pipeline-orchestration",
+      "path": "SKILL.md",
+      "sha256": "sha256-58fa724b365496cddca894e78aca9b78182e9680027b48e3b29f513be88c36c5",
+      "size": 10133
+    },
+    {
+      "id": "mlops-engineer",
+      "path": "SKILL.md",
+      "sha256": "sha256-daa9d9c7960db3beb4354ecc72b049984eee4a7cae0a4fdb9976bbd676ea9ba4",
+      "size": 11164
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Fix CI"
+  short_description: "Repair only small, obvious CI failures"
+  default_prompt: "Use $fix-ci to diagnose this PR's CI and repair only an obvious low-risk failure."
+policy:
+  allow_implicit_invocation: true

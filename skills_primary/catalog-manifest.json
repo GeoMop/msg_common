@@ -1,0 +1,237 @@
+{
+  "catalog": {
+    "package": "agentic-awesome-skills",
+    "version": "18.10.0",
+    "digest": "sha256-38ceca8b5e91dfee5a0e27d27eca75cd77f8338682a57a5940f4e4b2e23ab500"
+  },
+  "catalogSkillIds": [
+    "papers-skill",
+    "source-driven-development",
+    "concise-planning",
+    "andrej-karpathy",
+    "python",
+    "cpp-pro",
+    "python-testing-patterns",
+    "debugging-strategies",
+    "code-review-excellence",
+    "scikit-learn",
+    "hugging-face-trackio"
+  ],
+  "files": [
+    {
+      "id": "papers-skill",
+      "path": "SKILL.md",
+      "sha256": "sha256-316894fad857377e743ab8616f1fd0eb67f1609d401ee9b5a41fca05ec100ca2",
+      "size": 8439
+    },
+    {
+      "id": "papers-skill",
+      "path": "scripts/papers.py",
+      "sha256": "sha256-7bb2967cdb3965863a855c29934befe0dfbd37f7207893b9388b3e4026f95b11",
+      "size": 8970
+    },
+    {
+      "id": "source-driven-development",
+      "path": "SKILL.md",
+      "sha256": "sha256-859595f2063e5a44b345dfa04139c7600ad45e75e4c42edf14bd33e1aed920e6",
+      "size": 8860
+    },
+    {
+      "id": "concise-planning",
+      "path": "SKILL.md",
+      "sha256": "sha256-16c442423584dcfb0d556cbd1c1bfd80a08ac6ef0c7b4fdfde88a7fd13ba1b31",
+      "size": 1790
+    },
+    {
+      "id": "andrej-karpathy",
+      "path": "SKILL.md",
+      "sha256": "sha256-0516f187326dac943d338c17f8f408925bc64783da043c5fcc42082a50b6b01f",
+      "size": 4145
+    },
+    {
+      "id": "python",
+      "path": "SKILL.md",
+      "sha256": "sha256-1a91a02962766fbaa34bd621997013d68a10fd2503de24320b2810213349696a",
+      "size": 6503
+    },
+    {
+      "id": "cpp-pro",
+      "path": "SKILL.md",
+      "sha256": "sha256-8b136cd7cbf5ba73db0041cad94691c8191cb406e0347a8f16b22e30a41b88fb",
+      "size": 2188
+    },
+    {
+      "id": "cpp-pro",
+      "path": "references/build-tooling.md",
+      "sha256": "sha256-337ae8b622628fafae86f89d914561ee6176b8d74073db2d5580e91ddd240f30",
+      "size": 9761
+    },
+    {
+      "id": "cpp-pro",
+      "path": "references/concurrency.md",
+      "sha256": "sha256-cb772cec134530ed7ca4af25c261d42850ce27e92133657849e09d6cb2544891",
+      "size": 10918
+    },
+    {
+      "id": "cpp-pro",
+      "path": "references/memory-performance.md",
+      "sha256": "sha256-9bf813632158c49f3843d1b0d803aa710a5ae67a5f37df6420bee42f4f161caa",
+      "size": 9104
+    },
+    {
+      "id": "cpp-pro",
+      "path": "references/modern-cpp.md",
+      "sha256": "sha256-7410851bb066f5e6d825fab2efe7d767ed0ca2ea44cd377ff4f6ef7f90a21736",
+      "size": 6565
+    },
+    {
+      "id": "cpp-pro",
+      "path": "references/templates.md",
+      "sha256": "sha256-d7a8e294439879126cd5df5b415eecf171d193f97368a2142607162c106a3ee8",
+      "size": 7908
+    },
+    {
+      "id": "cpp-pro",
+      "path": "resources/implementation-playbook.md",
+      "sha256": "sha256-633456607c26300d7ef3e262255e2f7b782f6308d3c2174d8f30eb2ec6bd9994",
+      "size": 1255
+    },
+    {
+      "id": "python-testing-patterns",
+      "path": "SKILL.md",
+      "sha256": "sha256-467fdbc399027e09da7df551c2088dad0e2fa7cba590be3059b40bfcbc63794a",
+      "size": 1732
+    },
+    {
+      "id": "python-testing-patterns",
+      "path": "resources/implementation-playbook.md",
+      "sha256": "sha256-885f14af72736e2145e61326b8e743cbe9f7e96e617ab2b5d1306be378964f3f",
+      "size": 21557
+    },
+    {
+      "id": "debugging-strategies",
+      "path": "SKILL.md",
+      "sha256": "sha256-49fb069639aed6df0e1d86629cfa291422cab2911daf9d4c6e29834e3fdac2a9",
+      "size": 1550
+    },
+    {
+      "id": "debugging-strategies",
+      "path": "resources/implementation-playbook.md",
+      "sha256": "sha256-b74622e440ab2ac223d1eaec23ebf02d1ce54dcb8a8d3246b44f9130fda02b86",
+      "size": 11944
+    },
+    {
+      "id": "code-review-excellence",
+      "path": "SKILL.md",
+      "sha256": "sha256-6c9ccf6710c876a04d7605377908a67c50a20781f2c6a1e154c6ab87f15c024f",
+      "size": 1718
+    },
+    {
+      "id": "code-review-excellence",
+      "path": "resources/implementation-playbook.md",
+      "sha256": "sha256-ece72677dd719176f7c7b3c06ce59bfb3bbb74c25da471c0788e69bfd776ec13",
+      "size": 13389
+    },
+    {
+      "id": "scikit-learn",
+      "path": "SKILL.md",
+      "sha256": "sha256-82676c39d73b4c48701c987278594925c31bea2bc884656cfb0db78fdd6e5f7d",
+      "size": 2403
+    },
+    {
+      "id": "scikit-learn",
+      "path": "references/detailed-guide.md",
+      "sha256": "sha256-a5d21db110e192ce07d90170efce3c7e769873784a4254f058401f288e81274b",
+      "size": 13823
+    },
+    {
+      "id": "hugging-face-trackio",
+      "path": ".claude-plugin/plugin.json",
+      "sha256": "sha256-b7d3118aeaf625bf16c3c8c8315294c0f2ac15ae26f764de03fb1007c9415f87",
+      "size": 694
+    },
+    {
+      "id": "hugging-face-trackio",
+      "path": "SKILL.md",
+      "sha256": "sha256-2cf382c2d1736a9ebf89eea92cf7885e8aac7b42a841bbcc70d9326919a7d94f",
+      "size": 5444
+    },
+    {
+      "id": "hugging-face-trackio",
+      "path": "references/alerts.md",
+      "sha256": "sha256-4065538fd2d090a145cdb66b7b84019d448becd3038740c87708b8fa1bdaef08",
+      "size": 5950
+    },
+    {
+      "id": "hugging-face-trackio",
+      "path": "references/logging_metrics.md",
+      "sha256": "sha256-8230be7bc121f1709462ed2424cea5d0b1c252a68a0e447bafbb9792e28d1a05",
+      "size": 4853
+    },
+    {
+      "id": "hugging-face-trackio",
+      "path": "references/retrieving_metrics.md",
+      "sha256": "sha256-fa1339a8f6a7f88d2d83b191324eb8412d80ee837e9779fbc70cda81408e5e90",
+      "size": 8707
+    }
+  ],
+  "localSkillIds": [
+    "plan-work",
+    "pr-review",
+    "debug-error",
+    "test-cover"
+  ],
+  "proposedCustomSkillsNotAvailableInCatalog": [
+    "scientific-implementation",
+    "numerical-validation",
+    "scientific-data-contract",
+    "nn-experiment"
+  ],
+  "localFiles": [
+    {
+      "path": "plan-work/SKILL.md",
+      "sha256": "sha256-83c81dd351c590bee920dbbb88490e38081859cda5c8b5ef2388bf9af386b80f",
+      "size": 2003
+    },
+    {
+      "path": "plan-work/agents/openai.yaml",
+      "sha256": "sha256-d090bd040953638713d3dc2de61bca6d093e5e92cd873f3ef37064e7469432bd",
+      "size": 259
+    },
+    {
+      "path": "pr-review/SKILL.md",
+      "sha256": "sha256-7b47d717cfffba3126ae1199bdd098ad77921dbebcf35786256b8d852ec3087e",
+      "size": 2977
+    },
+    {
+      "path": "pr-review/agents/openai.yaml",
+      "sha256": "sha256-20cf3109d9b5e0423f664b16ecf11895facc2c53af508577f3f0e11f36686552",
+      "size": 246
+    },
+    {
+      "path": "pr-review/references/review-policy.md",
+      "sha256": "sha256-bcf11b047fef9466de3ab4d896d1cb4804756531c57e1ef8f9e7477456e6c4bc",
+      "size": 2792
+    },
+    {
+      "path": "debug-error/SKILL.md",
+      "sha256": "sha256-69976a9449ba44d67965ff094449d88b108acb064ce7703af3b7589700f78949",
+      "size": 2145
+    },
+    {
+      "path": "debug-error/agents/openai.yaml",
+      "sha256": "sha256-17ab0e1fe61463b12ea0f54750c93cb5abc8d95c98f9300697b4483c0ff26aa9",
+      "size": 271
+    },
+    {
+      "path": "test-cover/SKILL.md",
+      "sha256": "sha256-a5a67cb9e6fba5c3f9a8f49e6546324d2a27bcaebd7750ca3513142b39208a92",
+      "size": 2226
+    },
+    {
+      "path": "test-cover/agents/openai.yaml",
+      "sha256": "sha256-e861b8732c9e8f18106f9a1f8667fe93c0e26a4d32c217947d0c74cff40fa9be",
+      "size": 253
+    }
+  ]
+}

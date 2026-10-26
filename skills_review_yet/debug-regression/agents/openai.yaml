@@ -1,0 +1,6 @@
+interface:
+  display_name: "Debug Regression"
+  short_description: "Find the change that introduced a regression"
+  default_prompt: "Use $debug-regression to identify the historical change that caused this regression without fixing it."
+policy:
+  allow_implicit_invocation: true

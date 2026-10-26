@@ -1,0 +1,6 @@
+interface:
+  display_name: "Review"
+  short_description: "Review code for concrete defects and risks"
+  default_prompt: "Use $review to perform a read-only review of the current changes and report actionable findings."
+policy:
+  allow_implicit_invocation: true

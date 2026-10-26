@@ -1,0 +1,6 @@
+interface:
+  display_name: "Test Reproduce"
+  short_description: "Turn a diagnosed error into a failing test"
+  default_prompt: "Use $test-reproduce to add the smallest stable test reproducing this diagnosed error, without fixing it."
+policy:
+  allow_implicit_invocation: true

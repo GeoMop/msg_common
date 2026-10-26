@@ -1,0 +1,6 @@
+interface:
+  display_name: "Debug Error"
+  short_description: "Report evidence and the error's causal chain"
+  default_prompt: "Use $debug-error to determine the causal chain behind this error without fixing it or adding tests."
+policy:
+  allow_implicit_invocation: true

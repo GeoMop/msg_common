@@ -1,0 +1,6 @@
+interface:
+  display_name: "Make PR"
+  short_description: "Validate changes and open a focused PR"
+  default_prompt: "Use $make-pr to validate the intended changes and open a focused pull request."
+policy:
+  allow_implicit_invocation: true
