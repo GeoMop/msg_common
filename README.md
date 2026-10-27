@@ -10,22 +10,14 @@
 
 ## Skills - overview
 
-This repository is a first iteration of a shared, skills-only plugin for small
-software and research teams. It contains ten focused workflows:
+This repository provides shared skills for small software and research teams,
+plus a reusable Codex code-review agent definition. The active review workflows
+are:
 
 | Skill | Purpose |
 | --- | --- |
-| `code-review` | Perform a team specific code review of a local changes, diff, branch, commit range, or PR with context. Follows: `skills/code-review/references/review-policy.md`|
-| `pr-review` | Extract PR context, call `code-review` in specialized agent, optionaly create unsubmitted comments on github. |
-
-| `debug-regression` | Identify the particular historical change that caused previously working behavior to regress. |
-| `test-reproduce` | Add the smallest durable test that reproduces a known error; do not fix the implementation. |
-| `test-cover` | Design broader tests for a function, class, or coherent component using behavior, boundaries, invariants, and representative cases. |
-| `make-pr` | Prepare, validate, push, and open a focused pull request. |
-| `fix-ci` | Diagnose CI and repair only small failures with an obvious solution; report design or algorithmic failures without changing them. |
-| `literature` | Find and organize literature for a topic; optionally create a Zotero collection through an available Zotero MCP connection. |
-| `plan-work` | Turn a request, issue, or research task into an executable plan without implementing it. |
-| `debug-error` | Collect evidence and report the causal chain behind a current error, without fixing it or writing a reproduction test. |
+| `code-review` | Review local changes or two local commits using the [team policy](skills/code-review/references/review-policy.md); always save findings. |
+| `pr-review` | Collect PR context, delegate to the code-review agent, optionally save the full context bundle and upload pending GitHub comments through MCP. |
 
 The repository includes both the portable root `plugin.json` manifest and the
 Codex compatibility manifest at `.codex-plugin/plugin.json`.
@@ -85,15 +77,16 @@ git switch -c improve-pr-review
 
 Edit the appropriate `SKILL.md`, its directly referenced files, and its
 `agents/openai.yaml` if the name, short description, or default prompt changed.
-For example, team-specific pull-request rules belong in:
+For example, shared team review rules belong in:
 
 ```text
-skills/pr-review/references/review-policy.md
+skills/code-review/references/review-policy.md
 ```
 
 Then validate and inspect the changes:
 
 ```bash
+skills-ref validate ./skills/code-review
 skills-ref validate ./skills/pr-review
 git diff --check
 git diff
@@ -163,7 +156,9 @@ ambiguity, use tools, and format outputs.
 
 The active model process that reads the request, project instructions, and any
 selected skills; uses tools; and produces the result. A skill changes how an
-agent performs a task but does not become a separate agent.
+agent performs a task but does not become a separate agent. Custom agent TOML
+definitions can set task-specific model defaults and instructions;
+`agents/openai.yaml` within a skill supplies UI metadata instead.
 
 **Subagent**
 
@@ -174,7 +169,7 @@ have separate context and return their findings to the coordinating agent.
 
 An installable distribution package containing one or more skills and,
 optionally, MCP servers, hooks, apps, or UI resources. This repository is a
-skills-only plugin.
+skills plugin with a separately registered review-agent definition.
 
 **MCP server**
 
@@ -243,14 +238,12 @@ literature searches. Ask for delegation explicitly and specify:
 - the result format returned by each subagent;
 - how duplicate or conflicting findings should be reconciled.
 
-Example PR review:
+The normal PR review delegates once to the dedicated reviewer:
 
 ```text
-Use $pr-review on the current pull request. Spawn four parallel subagents:
-one for behavioral correctness, one for tests, one for API/data compatibility,
-and one for performance and resource use. All agents must read the same team
-review policy. Keep the work read-only, wait for all agents, deduplicate their
-findings, and return one severity-ordered review with file and line references.
+Use $pr-review on the current pull request. Collect the full context and use
+the code-review agent to write the report. Focus on data integrity and API
+compatibility. Save the complete input context for debugging.
 ```
 
 Example regression investigation:
@@ -270,3 +263,97 @@ Subagents inherit the parent sandbox and approval policy and consume additional
 tokens.
 
 See [OpenAI's subagent documentation](https://learn.chatgpt.com/docs/agent-configuration/subagents).
+
+## 7. Configure and use the review workflows
+
+`code-review` owns the shared [team policy](skills/code-review/references/review-policy.md).
+Its bundled [Python](skills/code-review/references/python.md) and
+[C++](skills/code-review/references/cpp.md) rules apply to both coding and review,
+alongside applicable `AGENTS.md` instructions.
+It reviews staged/unstaged changes and relevant untracked files by default, or
+compares two locally available commits with supplied context. It can run in
+the active agent without a custom-agent installation. It preserves existing
+source files and writes `REVIEW_RESULTS-<name>-<num>.md` at the repository root,
+or a requested path. Follow-ups after code changes or comment resolutions get
+a new report describing previously unreported issues, with a fresh issue limit.
+Unresolved earlier issues are referenced only by ID, grouped by their original
+report filename, and do not count toward that limit. Resolved issues are omitted.
+An unchanged completed review reuses its report without adding issues.
+Unrelated files are never overwritten. See the [report contract](skills/code-review/references/reporting.md).
+Reports contain at most ten topically distinct issues by default, grouping
+similar problems with representative code locations. Request an explicit higher
+issue limit for a broader report. The skill returns only the report path.
+`pr-review` can optionally save the complete context bundle passed to the reviewer
+in the same report. It writes only the report and necessary temporary files;
+missing Git objects are obtained in a temporary repository, leaving the original
+repository and its `.git` unchanged.
+
+```text
+$code-review Review the local changes and write findings.
+
+$code-review Compare commits abc123 and def456 using requirements.md as
+context. Write a fresh report to /tmp/review-output.md.
+
+$pr-review Review PR 142 with GitHub upload and save the full context bundle.
+Leave the comments pending for me to inspect and submit.
+
+$pr-review Review PR 142 and submit the findings as a COMMENT review.
+```
+
+`pr-review` delegates to the dedicated `code-review` agent. The
+[runtime definition](skills/code-review/agents/code-review.toml)
+defaults to `gpt-6.1-sol` with `high` reasoning. Copy it to
+`~/.codex/agents/code-review.toml` or the consuming project's
+`.codex/agents/code-review.toml`, preserving existing custom definitions, then
+start a new session. Skill/plugin installation does not register this agent
+automatically. Hosts exposing only generic explicit-model spawning can use the
+definition as task defaults; the workflow discloses that mode and its lack of
+runtime feature controls. See [agent setup and inherited permissions](skills/code-review/references/agent-setup.md).
+
+The reviewer permits online primary documentation lookups for uncertain library
+behavior; PR/repository collection stays in the orchestrator. Reports must be
+writable: failure to create or update one stops the review before analysis.
+The custom agent inherits the parent's sandbox. Its instructions preserve
+source files; they do not enforce a separate read-only filesystem environment.
+
+GitHub upload needs an MCP connection supporting pending review creation,
+inline draft comments, body updates where needed, and state inspection.
+Generic comments go in the pending review body. A tool that only submits a
+review is insufficient. When draft capability is unavailable, the workflow
+records that limitation in the local report and uploads nothing. Upload uses
+MCP's existing permissions without an extra confirmation. Submission requires
+an explicit request. Return values are limited to the report path or a count of
+new GitHub comments/issues. The usual limit is 10, with an absolute maximum of
+30 unless the user requests more. See the
+[GitHub lifecycle and comment limits](skills/pr-review/references/github-review.md).
+
+### Development checks
+
+Run the script checks with Node.js and validate both skill directories:
+
+```bash
+node tests/check_github_review_mcp.test.cjs
+skills-ref validate skills/code-review
+skills-ref validate skills/pr-review
+git diff --check
+```
+
+`scripts/check_github_review_mcp.js` is a development probe outside the skills.
+It defines the function `checkGithubReviewMcp` in its evaluation context and
+expects an MCP host's `catalog` and `call(name, args)` adapter. In a Codex
+`functions.exec` host, it can be run with:
+
+```javascript
+const source = await tools.exec_command({cmd: "cat scripts/check_github_review_mcp.js"});
+const probe = new Function(source.output + "\nreturn checkGithubReviewMcp;")();
+text(await probe({catalog: ALL_TOOLS, call: (name, args) => tools[name](args)}));
+```
+
+By default it tests identity/repository access and reads PR metadata when a
+unique target is available. To test one actual pending inline comment, supply
+`prNumber`, `expectedLogin`, and
+`inline: {expectedHead, path, line, side, body}` only for an explicitly
+authorized test target. It leaves the test draft for user inspection and never
+submits/deletes it. Existing pending reviews and changed heads block writes.
+Its creation adapter targets the official GitHub MCP server's documented
+pending-review tools; other transports require a verified adapter.
