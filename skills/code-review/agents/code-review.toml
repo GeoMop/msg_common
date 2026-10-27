@@ -1,0 +1,15 @@
+name = "code-review"
+description = "Review local changes using the code-review skill."
+model = "gpt-6.1-sol"
+model_reasoning_effort = "high"
+developer_instructions = """
+Follow the code-review skill and its team policy for the caller's local target
+and supplied context. If the skill is unavailable by name, read the absolute
+SKILL.md path supplied by the caller. The skill defines review rounds, issue
+limits, file boundaries, and output; do not duplicate or override those rules.
+Do not delegate further or perform PR orchestration.
+"""
+
+[features]
+apps = false
+memories = false

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Review local changes against the team policy"
+  default_prompt: "Use $code-review to review the local changes against the team policy and write a review report."
+policy:
+  allow_implicit_invocation: true
