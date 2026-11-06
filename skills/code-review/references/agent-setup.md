@@ -1,36 +1,13 @@
-# Dedicated review agent
+# Review agent execution
 
-This is user-facing documentation for installing and configuring the review
-agent, plus integration guidance for the calling orchestrator. Review behavior
-is defined in `SKILL.md`, not here.
+**Audience: the agent delegating or executing a code review.**
+This reference describes invocation and runtime constraints. Installation and
+configuration are user tasks documented in [skills/README.md](../../README.md#review-skills-setup).
+Do not install agents, modify Codex configuration, or request credentials as
+part of a review. Report missing prerequisites and point the user to that guide.
 
-The runtime definition is [agents/code-review.toml](../agents/code-review.toml).
-`agents/openai.yaml` supplies skill UI metadata only. The default review model
-is `gpt-6.1-sol` with `high` reasoning; both are editable in the TOML file.
-
-## Registration
-
-On Codex versions supporting standalone custom agents, copy the definition to
-`~/.codex/agents/code-review.toml` for personal use, or to
-`<reviewed-project>/.codex/agents/code-review.toml` for project use. Create the
-directory if needed and preserve an existing custom definition. Start a new
-session after registration. Installing the skills plugin alone does not install
-this runtime agent. The caller must also make `code-review` available through
-the plugin/skill installation or supply its absolute `SKILL.md` path.
-
-From this repository root, for a project without an existing definition:
-
-```bash
-mkdir -p /path/to/project/.codex/agents
-cp -n skills/code-review/agents/code-review.toml /path/to/project/.codex/agents/code-review.toml
-```
-
-Check the installed Codex version and custom-agent support before registration.
-The definition follows the standalone-agent schema documented for current
-Codex and was developed with CLI 0.164.0. Older role/config-file schemas differ;
-do not put model keys into `openai.yaml` or silently ignore an unsupported agent.
-
-## Execution environment
+Review behavior is defined in [SKILL.md](../SKILL.md). Runtime defaults are in
+[agent-definitions/code-review.toml](../agent-definitions/code-review.toml).
 
 Prefer registered agent type `code-review`. Spawn it once with the local
 repository path, explicit target, context bundle, prior report references,

@@ -43,6 +43,11 @@ and disagreements before responding.
 
 ## Boundaries
 
+Installation and configuration are prerequisites, not review steps. Do not
+install agents, change Codex configuration, or request credentials while
+reviewing. Report missing prerequisites and link to the
+[user setup guide](../README.md#review-skills-setup).
+
 - Keep the repository and remote PR read-only.
 - Do not submit comments, approval, or change requests unless the user asks for
   that external action after seeing the findings.

@@ -1,0 +1,19 @@
+{
+  "name": "msg-workflows-local",
+  "interface": {
+    "displayName": "MSG Workflows (local)"
+  },
+  "plugins": [
+    {
+      "name": "msg-workflows",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

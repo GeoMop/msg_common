@@ -1,6 +1,6 @@
 interface:
   display_name: "PR Review"
-  short_description: "Review a PR using the shared team policy"
-  default_prompt: "Use $pr-review to review the current pull request using the bundled team policy."
+  short_description: "Collect PR context and delegate a team code review"
+  default_prompt: "Use $pr-review to perfrom pull request of current brnach through the code-review agent and write a review report."
 policy:
   allow_implicit_invocation: true

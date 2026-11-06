@@ -1,7 +1,7 @@
 name = "code-review"
 description = "Review local changes using the code-review skill."
 model = "gpt-6.1-sol"
-model_reasoning_effort = "high"
+model_reasoning_effort = "medium"
 developer_instructions = """
 Follow the code-review skill and its team policy for the caller's local target
 and supplied context. If the skill is unavailable by name, read the absolute
