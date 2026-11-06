@@ -138,12 +138,11 @@ no real token or network access and create no GitHub comments:
 ```bash
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 node tests/review_data.test.cjs
-node tests/github_pending_review.test.cjs
 ```
 
 The Python checks cover setup, token storage, MCP responses/catalogs, identity,
 PR data, timestamped comment creation/update, and the optional pending-comment
 diagnostic's failure safeguards.
 The JS checks cover the [production PR helpers](../skills/pr-review/README.md),
-including patch locations, comment limits, duplicate prevention, and uploads.
+including patch locations, comment limits and duplicate prevention.
 Offline checks do not prove that your live GitHub connection works.

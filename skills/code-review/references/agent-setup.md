@@ -11,7 +11,8 @@ Review behavior is defined in [SKILL.md](../SKILL.md). Runtime defaults are in
 
 Prefer registered agent type `code-review`. Spawn it once with the local
 repository path, explicit target, context bundle, prior report references,
-destination. The caller owns full-context output. Wait for its report. Do not
+destination. Use a fresh context without the parent's conversation history;
+supply the full review input explicitly. The caller owns full-context output. Wait for its report. Do not
 spawn the PR orchestration skill as the reviewer.
 
 Some hosts expose only generic subagent spawning with explicit model/reasoning
@@ -22,8 +23,9 @@ its `developer_instructions` and absolute skill path, and start without the
 parent conversation history. Supply the complete review bundle explicitly.
 Record this adapter mode in the report: it applies task defaults and instructions, not
 registered-agent feature controls. Do not claim the runtime registered the
-custom type or enforced its `[features]` reductions. If neither named agents
-nor explicit-model delegation is available, report the missing support and stop.
+custom type or enforced its `[features]` reductions. If delegation is unavailable
+and the calling workflow permits it, run the `code-review` skill directly in
+the current agent. Record this fallback without claiming a separate context.
 
 When loaded as a runtime agent, the definition disables apps and memories. Shell and plugin/skill access remain
 available, as does the parent's native web documentation tool. The reviewer
