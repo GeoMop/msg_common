@@ -1,5 +1,7 @@
 # C++ coding rules
 
+*Still preliminary version of cpp rules.*
+
 Apply these requirements when writing and reviewing C++. Read applicable
 `AGENTS.md` instructions; use the language standard, platforms, and dependencies
 declared by the build configuration. Apply rules to the changed behavior and

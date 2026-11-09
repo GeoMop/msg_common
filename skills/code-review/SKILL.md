@@ -118,6 +118,11 @@ files and necessary temporary files are allowed. Never use a source or context
 file as the report destination.
 
 This skill can run directly in the active agent. When delegated, use the
-configured `code-review` agent described in [agent setup](references/agent-setup.md).
+configured `code-review` agent described in [agent execution](references/agent-setup.md).
 The reviewer does not delegate recursively. Remote collection and publication
 belong to `pr-review`.
+
+Installation and configuration are prerequisites, not review steps. Do not
+install agents, change Codex configuration, or request credentials while
+reviewing. If a required capability is missing, report it and link to the
+[user setup guide](../README.md#review-skills-setup).

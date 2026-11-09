@@ -1,0 +1,38 @@
+{
+  "name": "msg-workflows",
+  "version": "0.1.0",
+  "description": "Agent plugin for Multiphysic Software Group - common skills and MCPs.",
+  "repository": "https://github.com/GeoMop/msg_common",
+  "author": {
+    "name": "Multiphysics Software Group"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "software-development",
+    "research",
+    "debugging",
+    "testing",
+    "code-review",
+    "pull-requests",
+    "continuous-integration",
+    "literature"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "MSG Workflows",
+    "shortDescription": "MSG development and research workflows",
+    "longDescription": "Plan work; investigate errors and regressions; create reproduction and coverage tests; review code and pull requests; prepare pull requests; repair small CI failures; and collect research literature.",
+    "developerName": "Multiphysics Software Group",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Plan this change before implementation",
+      "Investigate this regression and report its causal chain",
+      "Review the current pull request using our team policy"
+    ]
+  }
+}
